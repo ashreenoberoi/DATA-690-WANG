@@ -4,19 +4,43 @@
 ##Why not Python?As Python is an interpreted programming language, in general most Python code willrun substantially slower than code written in a compiled language like Java or C++. Asprogrammer time is typically more valuable than CPU time, many are happy to makethis tradeoff.Python is not an ideal language for highly concurrent, multithreaded applications, par-ticularly applications with many CPU-bound threads. The reason for this is that it haswhat is known as the global interpreter lock (GIL), a mechanism which prevents theinterpreter from executing more than one Python bytecode instruction at a time. Thetechnical reasons for why the GIL exists are beyond the scope of this book, but as ofthis writing it does not seem likely that the GIL will disappear anytime soon.
 
 
-##NumPy: umPy, short for Numerical Python, is the foundational package for scientific com-puting in Python. The majority of this book will be based on NumPy and libraries builton top of NumPy. It provides, among other things:• A fast and efficient multidimensional array object ndarray• Functions for performing element-wise computations with arrays or mathematicaloperations between arrays• Tools for reading and writing array-based data sets to disk• Linear algebra operations, Fourier transform, and random number generation• Tools for integrating connecting C, C++, and Fortran code to Python
-Pandas: pandas provides rich data structures and functions designed to make working withstructured data fast, easy, and expressive. It is, as you will see, one of the critical in-gredients enabling Python to be a powerful and productive data analysis environment.The primary object in pandas that will be used in this book is the DataFrame, a two-dimensional tabular, column-oriented data structure with both row and column labels.pandas combines the high performance array-computing features of NumPy with theflexible data manipulation capabilities of spreadsheets and relational databases (suchas SQL). It provides sophisticated indexing functionality to make it easy to reshape,slice and dice, perform aggregations, and select subsets of data. pandas is the primarytool that we will use in this book.
-Matplotlib: matplotlib is the most popular Python library for producing plots and other 2D datavisualizations. It was originally created by John D. Hunter (JDH) and is now maintainedby a large team of developers. It is well-suited for creating plots suitable for publication.It integrates well with IPython (see below), thus providing a comfortable interactiveenvironment for plotting and exploring data. The plots are also interactive; you canzoom in on a section of the plot and pan around the plot using the toolbar in the plotwindow
-SciPy: SciPySciPy is a collection of packages addressing a number of different standard problemdomains in scientific computing. Here is a sampling of the packages included:•scipy.integrate: numerical integration routines and differential equation solvers•scipy.linalg: linear algebra routines and matrix decompositions extending be-yond those provided in numpy.linalg.•scipy.optimize: function optimizers (minimizers) and root finding algorithms•scipy.signal: signal processing tools•scipy.sparse: sparse matrices and sparse linear system solvers•scipy.special: wrapper around SPECFUN, a Fortran library implementing manycommon mathematical functions, such as the gamma function•scipy.stats: standard continuous and discrete probability distributions (densityfunctions, samplers, continuous distribution functions), various statistical tests,and more descriptive statistics•scipy.weave: tool for using inline C++ code to accelerate array computation.
-scikit-learn: Since  the  project’s  inception  in  2010,  scikit-learn  has  become  the  premier  general-purpose machine learning toolkit for Python programmers. In just seven years, it hashad over 1,500 contributors from around the world. It includes submodules for suchmodels as:•Classification: SVM, nearest neighbors, random forest, logistic regression, etc.•Regression: Lasso, ridge regression, etc.•Clustering: k-means, spectral clustering, etc.•Dimensionality reduction: PCA, feature selection, matrix factorization, etc.•Model selection: Grid search, cross-validation, metrics•Preprocessing: Feature extraction, normalization
-Munge/munging/wranglingDescribes  the  overall  process  of  manipulating  unstructured  and/or  messy  datainto  a  structured  or  clean  form.  The  word  has  snuck  its  way  into  the  jargon  ofmany modern-day data hackers. “Munge” rhymes with “grunge.”
-PseudocodeA description of an algorithm or process that takes a code-like form while likelynot being actual valid source code.
-Syntactic sugarProgramming syntax that does not add new features, but makes something moreconvenient or easier to type
-How to import Libraries : import numpy as np import pandas as pd import matplotlib.pyplot as plt import urllib
-How to read txt file: path = 'ch02/usagov_bitly_data2012-03-16-1331923249.txt' and print open(path).readline()
-Counting time zone in pure python: time_zones = [rec['tz'] for rec in records if 'tz' in rec] and printing it time_zones[:10]
-Counting time zone in pandas : In [289]: from pandas import DataFrame, SeriesIn [290]: import pandas as pdIn [291]: frame = DataFrame(records)In [292]: frame
-Basic python commands : print "Hello, Python!"
+###NumPy: umPy, short for Numerical Python, is the foundational package for scientific com-puting in Python. The majority of this book will be based on NumPy and libraries builton top of NumPy. It provides, among other things:• A fast and efficient multidimensional array object ndarray• Functions for performing element-wise computations with arrays or mathematicaloperations between arrays• Tools for reading and writing array-based data sets to disk• Linear algebra operations, Fourier transform, and random number generation• Tools for integrating connecting C, C++, and Fortran code to Python
+
+
+####Pandas: pandas provides rich data structures and functions designed to make working withstructured data fast, easy, and expressive. It is, as you will see, one of the critical in-gredients enabling Python to be a powerful and productive data analysis environment.The primary object in pandas that will be used in this book is the DataFrame, a two-dimensional tabular, column-oriented data structure with both row and column labels.pandas combines the high performance array-computing features of NumPy with theflexible data manipulation capabilities of spreadsheets and relational databases (suchas SQL). It provides sophisticated indexing functionality to make it easy to reshape,slice and dice, perform aggregations, and select subsets of data. pandas is the primarytool that we will use in this book.
+
+
+#####Matplotlib: matplotlib is the most popular Python library for producing plots and other 2D datavisualizations. It was originally created by John D. Hunter (JDH) and is now maintainedby a large team of developers. It is well-suited for creating plots suitable for publication.It integrates well with IPython (see below), thus providing a comfortable interactiveenvironment for plotting and exploring data. The plots are also interactive; you canzoom in on a section of the plot and pan around the plot using the toolbar in the plotwindow
+
+
+######SciPy: SciPySciPy is a collection of packages addressing a number of different standard problemdomains in scientific computing. Here is a sampling of the packages included:•scipy.integrate: numerical integration routines and differential equation solvers•scipy.linalg: linear algebra routines and matrix decompositions extending be-yond those provided in numpy.linalg.•scipy.optimize: function optimizers (minimizers) and root finding algorithms•scipy.signal: signal processing tools•scipy.sparse: sparse matrices and sparse linear system solvers•scipy.special: wrapper around SPECFUN, a Fortran library implementing manycommon mathematical functions, such as the gamma function•scipy.stats: standard continuous and discrete probability distributions (densityfunctions, samplers, continuous distribution functions), various statistical tests,and more descriptive statistics•scipy.weave: tool for using inline C++ code to accelerate array computation.
+
+
+#######scikit-learn: Since  the  project’s  inception  in  2010,  scikit-learn  has  become  the  premier  general-purpose machine learning toolkit for Python programmers. In just seven years, it hashad over 1,500 contributors from around the world. It includes submodules for suchmodels as:•Classification: SVM, nearest neighbors, random forest, logistic regression, etc.•Regression: Lasso, ridge regression, etc.•Clustering: k-means, spectral clustering, etc.•Dimensionality reduction: PCA, feature selection, matrix factorization, etc.•Model selection: Grid search, cross-validation, metrics•Preprocessing: Feature extraction, normalization
+
+
+########Munge/munging/wranglingDescribes  the  overall  process  of  manipulating  unstructured  and/or  messy  datainto  a  structured  or  clean  form.  The  word  has  snuck  its  way  into  the  jargon  ofmany modern-day data hackers. “Munge” rhymes with “grunge.”
+
+
+########PseudocodeA description of an algorithm or process that takes a code-like form while likelynot being actual valid source code.
+
+
+##########Syntactic sugarProgramming syntax that does not add new features, but makes something moreconvenient or easier to type
+
+
+###########How to import Libraries : import numpy as np import pandas as pd import matplotlib.pyplot as plt import urllib
+
+
+############How to read txt file: path = 'ch02/usagov_bitly_data2012-03-16-1331923249.txt' and print open(path).readline()
+
+
+#############Counting time zone in pure python: time_zones = [rec['tz'] for rec in records if 'tz' in rec] and printing it time_zones[:10]
+
+
+##############Counting time zone in pandas : In [289]: from pandas import DataFrame, SeriesIn [290]: import pandas as pdIn [291]: frame = DataFrame(records)In [292]: frame
+
+
+################Basic python commands : print "Hello, Python!"
 Writing comments : #!/usr/bin/python # First comment print "Hello, Python!" # second comment
 Python string commands: str = 'Hello World!'
 print str          # Prints complete string
