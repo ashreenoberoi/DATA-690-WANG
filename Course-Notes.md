@@ -95,5 +95,5 @@ print str + "TEST" # Prints concatenated strin
 
  #imesThe built-in Python datetime module provides datetime, date, and time types. Thedatetime  type,  as  you  may  imagine,  combines  the  information  stored  in  date  andtime and is the most commonly used
  
-# while loop specifies a condition and a block of code that is to be executed until thecondition evaluates to False or the loop is explicitly ended with break.
+#while loop specifies a condition and a block of code that is to be executed until thecondition evaluates to False or the loop is explicitly ended with break.
 
